@@ -1,19 +1,19 @@
 "use client";
 
-import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 const routes: { title: string; href: string }[] = [
-    { title: "Features", href: "#features" },
-    { title: "Resources", href: "#resources" },
-    { title: "Pricing", href: "#pricing" },
-  ];
+  { title: "Features", href: "#features" },
+  { title: "Resources", href: "#resources" },
+  { title: "Pricing", href: "#pricing" },
+];
 
-export const Navbar: React.FC<{ children: React.ReactNode }> = ({children}) => {
+export const Navbar: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -24,11 +24,7 @@ export const Navbar: React.FC<{ children: React.ReactNode }> = ({children}) => {
       <div className="flex items-center">
         <Link href={"/"} className="shrink-0">
           <div className="flex items-start gap-2">
-
-
-            <h1 className="text-2xl font-bold text-accent-foreground">
-              Mo
-            </h1>
+            <h1 className="text-2xl font-bold text-accent-foreground">Mo</h1>
           </div>
         </Link>
         <div className="hidden w-full justify-end gap-1 bg-background px-4 sm:flex">
@@ -43,11 +39,7 @@ export const Navbar: React.FC<{ children: React.ReactNode }> = ({children}) => {
           ))}
         </div>
       </div>
-      <div className="flex items-center gap-6">
-
-
-        {children}
-      </div>
+      <div className="flex items-center gap-6">{children}</div>
 
       {menuOpen && (
         <MobileMenu toggleMenu={toggleMenu} routes={routes}>
@@ -60,7 +52,7 @@ export const Navbar: React.FC<{ children: React.ReactNode }> = ({children}) => {
       </button>
     </div>
   );
-}
+};
 
 type MobileMenuProps = {
   toggleMenu: () => void;

@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { createClient } from "@/utils/supabase/client";
 
 import { getInitials } from "@/lib/utils";
-import { User } from "@supabase/supabase-js";
+import type { User } from "@supabase/supabase-js";
 
 const ProfileButton: React.FC<{ user: User | null }> = ({ user }) => {
   const [menuOpen, setMenuOpen] = useState(false);

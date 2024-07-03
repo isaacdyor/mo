@@ -1,10 +1,10 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
-import { cookies, headers } from "next/headers";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import type { LoginInput } from "./login/page";
 import type { SignupInput } from "./signup/page";
-import { redirect } from "next/navigation";
 
 const supabase = createClient();
 const origin = headers().get("origin");

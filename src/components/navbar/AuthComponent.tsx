@@ -1,5 +1,4 @@
 import { createClient } from "@/utils/supabase/server";
-import { cookies } from "next/headers";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import ProfileButton from "./ProfileButton";
